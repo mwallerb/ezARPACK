@@ -9,12 +9,16 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 # Start configuration
-cmake_minimum_required(VERSION 3.0.2 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
 
 # Project name and version
 set(EZARPACK_VERSION 0.6)
 project(ezARPACK VERSION ${EZARPACK_VERSION} LANGUAGES CXX)
 message(STATUS "Configuring ${PROJECT_NAME} version ${PROJECT_VERSION}")
+
+# Require C++11-compatible compiler
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Prohibit in-source builds
 if(${CMAKE_SOURCE_DIR} STREQUAL ${CMAKE_BINARY_DIR})
